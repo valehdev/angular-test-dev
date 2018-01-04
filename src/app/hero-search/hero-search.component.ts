@@ -6,7 +6,7 @@ import { of }         from 'rxjs/observable/of';
 
 import {
    debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
+} from 'rxjs/operators';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
