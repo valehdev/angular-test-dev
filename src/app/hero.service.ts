@@ -39,8 +39,8 @@ export class HeroService {
   private heroesUrl = 'api/heroes';  // URL to web api
 
   constructor(
-    private http: HttpClient,
-    private messageService: MessageService) { }
+    private http: HttpClient, // HTTP Client class property-ə yazılır və class daxili istifadəyə açıq elan edilir
+    private messageService: MessageService) { } // Mesaj Servisi property-ə yazılır və class daxili istifadəyə açıq elan edilir
 
   /** GET heroes from the server */
   getHeroes (): Observable<Hero[]> {

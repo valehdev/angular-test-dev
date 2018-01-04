@@ -14,24 +14,28 @@ import { HeroService } from '../hero.service';
 
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-heroes', // app-component`ə verilən tag
+  templateUrl: './heroes.component.html', // componentin olan fiziki faylın adı
+  styleUrls: ['./heroes.component.css'] // componentə aid olan private olan css fayl
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: Hero[]; // public property Hero modeline bağlanmış
 
   constructor(private heroService: HeroService) { }
+  // Hero Service app işə düşən kimi private şəkildə instance olur
+  // (ardı) buda bütün methodlarda service-lərə rahat access əldə etmək olur
 
   ngOnInit() {
-    this.getHeroes();
+    this.getHeroes(); // app işə başlayan kimi method avtomatik çağırılır
   }
 
+  /** getHeroes method bazadakı bütün heroları çəkmək üçündür */
   getHeroes(): void {
     this.heroService.getHeroes()
     .subscribe(heroes => this.heroes = heroes);
   }
 
+  /** add method bazaya yeni hero yaratmaq üçündür */
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
@@ -41,6 +45,7 @@ export class HeroesComponent implements OnInit {
       });
   }
 
+  /** delete bazadakı heronu identifikasiya nömrəsinə görə tapıb silir */
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();

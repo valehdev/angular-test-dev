@@ -3,6 +3,10 @@
 <div>
   <label>Hero name:
     <input #heroName />
+    <!--
+      input daxilindəki heroName inputa daxil olan dəyərləri dəyişən yaradıb ona yükləyir
+      dəyişənin adı ilə eynilik təşkil edir.
+    -->
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
   <button (click)="add(heroName.value); heroName.value=''">
