@@ -1,4 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+// InMemoryDbService veb api-lər üzərindən əməliyyatlar aparmaq üçün Məlumat bazası servisidir.
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
