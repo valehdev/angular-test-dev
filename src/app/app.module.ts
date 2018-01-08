@@ -1,7 +1,7 @@
-import { NgModule }       from '@angular/core'; // anguları trigger edən modul
-import { BrowserModule }  from '@angular/platform-browser'; 
-import { FormsModule }    from '@angular/forms'; // istifadəçi formlarının idarə edən modul
-import { HttpClientModule }    from '@angular/common/http'; // HTTP sorğularını idarə edən modul
+import { NgModule }             from '@angular/core'; // anguları trigger edən modul
+import { BrowserModule }        from '@angular/platform-browser'; 
+import { FormsModule }          from '@angular/forms'; // istifadəçi formlarının idarə edən modul
+import { HttpClientModule }     from '@angular/common/http'; // HTTP sorğularını idarə edən modul
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; // veb api-lər məlumatları idarə edən modul
 import { InMemoryDataService }  from './in-memory-data.service'; // fake data yaradıb onu vep api ilə idarə edən db rolunu oynuyan service
@@ -15,6 +15,7 @@ import { HeroesComponent }      from './heroes/heroes.component'; // heroların 
 import { HeroSearchComponent }  from './hero-search/hero-search.component'; // heroların bazadan axtarılıb istifadəçiyə göstərilməsi üçün yazılmış modul
 import { HeroService }          from './hero.service'; // hero üçün db ilə əməliyyat aparmaq üçün yazılmış servis
 import { MessageService }       from './message.service'; // istifadəçiyə aparılan əmıliyyatların göstərilməsini təmin edən service
+import { UsersComponent }       from './users/users.component';
 import { MessagesComponent }    from './messages/messages.component'; 
 
 // ngmodul bütün lazım olan component və servisləri app-ə include edir bütün əsaslı common include olunancaq nə varsa burdan idarə olunur.
@@ -35,6 +36,7 @@ import { MessagesComponent }    from './messages/messages.component';
   declarations: [
     AppComponent,
     DashboardComponent,
+    UsersComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
