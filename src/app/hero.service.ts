@@ -1,38 +1,17 @@
-import { Injectable } from '@angular/core'; 
-// Dependency Injection (DI) service-in ona uyğun componentlərdə təkrar istifadəsi üçün şərait yaradır.
-// Bu təkrar yüklənmənin qarşısını almaq bir növ DRY (özünü təkrar etməmək) üçün yazılmış bir dizayn paterndir
-// (ardı) və angularda təkrarçılığın qarşısını almaqdan ötrü bu dizayn paternini istifadə edir
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { catchError, map, tap } from 'rxjs/operators';
+import { MessageService } from './message.service';
+import { Hero } from "./hero";
 
-import { HttpClient, HttpHeaders } from '@angular/common/http'; // HTTP vasitəsi ilə serverə istək göndərib cavab ala bilir.
-
-// Qeyd: HTTP hər zaman sadəcə bir sorğu göndərib və bir cavab alırsan
-// Qeyd2: HttpClient.get method-u default olaraq JSON obyekti qaytarmır service-də HTTP header manual olaraq qeyd edilməlidir.
-
-import { Observable } from 'rxjs/Observable'; 
-// Dataların sinxron işləməsi üçün bir kitabxanadır
-// İş prinsipi HTTP üzərindən gələn dataları tam şəkildə emal edir və səhifənin yüklənməsini end user üçün təmin edir.
-// Buda o deməkdir asinxron mühitə malik dilin sinxron işləməsi üçün şərait yaradır.
-
-import { of } from 'rxjs/observable/of'; // mock-heroes fake dataların toplusu olan məlumatları array kimi qaytarır. Sinxronluğu təmin edərək
-// amma bu real app-də istifadə olunmur.
-
-
-import { catchError, map, tap } from 'rxjs/operators'; // error-ların idarə olunması üçün methodlar..
-// Observable məlumatı remote bazadan çəkərkən hər hansı bir səhvlik yaranarsa bu səhvi idarə etmək üçün catchError vasitəsilə olur
-// catchError tək başına istənilən nəticəni vermir əlavə errorHandler vasitəsilə ng-app errorlarını düzgün təyin edib vaxt qazanmaq olur
- 
-
-import { Hero } from './hero'; // Hero modeli hansı ki hero tabledakı sütunların data tiplərinin təyin olduğu hissə.
-import { MessageService } from './message.service'; // istifadəçi yönümlü log mesajların üçün yazılmış bütün componentlərdə istifadə olunan servis
-
-
-const httpOptions = { 
+const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-// HttpClient.get method-u default olaraq JSON obyekti qaytarmır service-də HTTP header manual olaraq qeyd edilməlidir.
 
-@Injectable() // Servis DI ilə təkrar istifadəyə açıq olduğunu elan edir..
+@Injectable()
 
 export class HeroService {
 
