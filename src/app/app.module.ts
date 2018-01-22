@@ -3,7 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {MemberModule} from './members/member.module';
 
 import {AppComponent} from './app.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -14,6 +13,7 @@ import {MessagesComponent} from './messages/messages.component';
 
 import {HeroService} from './hero.service';
 import {MessageService} from './message.service';
+import {ControlPanelComponent} from './control-panel/control-panel.component';
 
 @NgModule({
   imports: [
@@ -21,7 +21,6 @@ import {MessageService} from './message.service';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    MemberModule
   ],
   declarations: [
     AppComponent,
@@ -30,6 +29,7 @@ import {MessageService} from './message.service';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
+    ControlPanelComponent,
   ],
   providers: [HeroService, MessageService],
   bootstrap: [AppComponent]
