@@ -4,10 +4,9 @@ import {MembersComponent} from './members.component';
 import {MemberService} from './services/member.service';
 import {MemberRoutingModule} from './member-routing.module';
 import {RouterModule} from '@angular/router';
-import { MemberDetailComponent } from './member-detail/member-detail.component';
-import { MemberEditComponent } from './member-edit/member-edit.component';
-import { MemberListComponent } from './member-list/member-list.component';
-
+import {MemberDetailComponent} from './contents/member-detail/member-detail.component';
+import {MemberEditComponent} from './contents/member-edit/member-edit.component';
+import {MemberListComponent} from './contents/member-list/member-list.component';
 
 @NgModule({
   imports: [
