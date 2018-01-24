@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core'; 
+import { Component, OnInit } from '@angular/core';
 // Anguların core component class hansı ki template-in idarəsi üçün lazımdır
 // OnInit anguların öz constructorudur səhifə yüklənən zaman angular bu methodları avtomatik olaraq xoda salır.
 
-import { Hero } from '../hero'; 
+import { Hero } from './hero';
 // Model dediyimiz vəzifəni yerinə yetirir
 // Hər table ilə işləyən Model və Model ilə işləyən service-lər ayrıdır və bunlar öz aralarında qanunauyğunluq təşkil edir
 // Burda Model vəzifəsi görən Hero data alış-verişində olacaq table və onun sütunlarının data tipləri nədirsə təyin olunur
 // Təyin olunan data tiplərinə görə service-lər yazılan zaman bu tiplər əsasında baza ilə HTTP üzərində məlumat üçün istəklər göndərilir.
 
-import { HeroService } from '../hero.service';
+import { HeroService } from './hero.service';
 // HeroService vəzifəsi Hero Modelində təyin olunmuş qanuna uyğunluqlar əsasında fake mock data vəya in-memory-service dəki
 // (ardı) dataları modeldə təyin olunmuş tiplər əsasında methodlar vasitəsi CRUD əməliyyatları edir və dataları manupulyasiya edir
 
