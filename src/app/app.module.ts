@@ -21,7 +21,7 @@ import {ControlPanelComponent} from './control-panel/control-panel.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,

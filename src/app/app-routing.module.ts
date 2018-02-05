@@ -7,7 +7,7 @@ import {HeroDetailComponent} from './heroes/hero-detail/hero-detail.component';
 import {ControlPanelModule} from './control-panel/control-panel.module';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/control', pathMatch: 'full'},
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'detail/:id', component: HeroDetailComponent},
   {path: 'heroes', component: HeroesComponent},
