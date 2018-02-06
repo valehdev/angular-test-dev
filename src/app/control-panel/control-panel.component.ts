@@ -11,8 +11,7 @@ export class ControlPanelComponent implements OnInit {
 
   members: Members[] = [];
 
-  constructor(private memberService: MembersService) {
-  }
+  constructor(private memberService: MembersService) {}
 
   ngOnInit() {
     this.getMembers();
